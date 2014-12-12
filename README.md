@@ -2,7 +2,7 @@
 
 List the flows you can write to
 
-    wm > godock flows
+    wm > glowdock flows
             ID	|                 Name	| Organization	| URL
 
     iora:room1	|         water cooler	| Iora Health	| https://api.flowdock.com/flows/iora/room1
@@ -10,11 +10,11 @@ List the flows you can write to
 
 Write to a flow
 
-    wm > godock message --flow="iora:room2" --prepend="#some prepended text" "some message"
+    wm > glowdock message --flow="iora:room2" --prepend="#some prepended text" "some message"
 
 Stream messages and comments from some flows
 
-    wm > godock stream -o iora -f 'egg misc'
+    wm > glowdock stream -o iora -f 'egg misc'
      
     MSG: egg 10009047 wm message this is me in Egg
      

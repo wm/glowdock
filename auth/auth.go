@@ -21,7 +21,7 @@ var (
 	authURL     = "https://api.flowdock.com/oauth/authorize"
 	tokenURL    = "https://api.flowdock.com/oauth/token"
 	home, _     = syscall.Getenv("HOME")
-	cachefile   = home + "/.godock.json"
+	cachefile   = home + "/.glowdock.json"
 	code        = flag.String("code", "", "Authorization Code")
 	Token, _    = oauth.CacheFile(cachefile).Token()
 )

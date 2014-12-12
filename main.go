@@ -4,8 +4,8 @@ import (
 	"os"
 
 	"github.com/codegangsta/cli"
+	"github.com/wm/glowdock/auth"
 	"github.com/wm/go-flowdock/flowdock"
-	"github.com/wm/godock/auth"
 )
 
 var (
@@ -23,7 +23,7 @@ func init() {
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "godock"
+	app.Name = "glowdock"
 	app.Usage = "Interact with your flowdock flows."
 	app.Version = version
 

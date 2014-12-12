@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/codegangsta/cli"
+	"github.com/wm/glowdock/auth"
 	"github.com/wm/go-flowdock/flowdock"
-	"github.com/wm/godock/auth"
 )
 
 type flowMessage struct {
