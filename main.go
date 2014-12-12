@@ -12,6 +12,7 @@ var (
 	users        map[int]flowdock.User
 	clientSecret string
 	clientId     string
+	version      string
 	client       *flowdock.Client
 )
 
@@ -24,6 +25,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "godock"
 	app.Usage = "Interact with your flowdock flows."
+	app.Version = version
 
 	app.Commands = []cli.Command{
 		{
