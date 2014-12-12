@@ -23,6 +23,7 @@ var (
 	home, _     = syscall.Getenv("HOME")
 	cachefile   = home + "/.godock.json"
 	code        = flag.String("code", "", "Authorization Code")
+	Token, _    = oauth.CacheFile(cachefile).Token()
 )
 
 func AuthenticationRequest(clientSecret string, clientId string) *http.Client {
