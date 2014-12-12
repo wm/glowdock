@@ -22,6 +22,10 @@ Stream messages and comments from some flows
 
 #### Building
 
-To build run as follos with XXXX and YYYY set to the secret and ID for the app you have registered with Flowdock
+To build the binary you need to pass some variables.
 
-    wm > go build . -ldflags "-X main.clientSecret XXXX -X main.clientId YYYY -X main.version x.x.x"
+    wm > go build . -ldflags "-X main.clientSecret XXXX -X main.clientId YYYY -X main.version z.z.z"
+
+Where XXXX and YYYY are the secret and ID for the app you have registered with
+Flowdock. And z.z.z is the version of the app.
+
