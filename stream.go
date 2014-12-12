@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"os"
 	"strconv"
 	"strings"
 
@@ -26,14 +26,14 @@ func Stream(c *cli.Context) {
 
 	org := c.String("org")
 	if len(org) < 1 {
-		log.Fatal("An org is required")
-		return
+		cli.ShowCommandHelp(c, c.Command.Name)
+		os.Exit(1)
 	}
 
 	flow := c.String("flow")
 	if len(flow) < 1 {
-		log.Fatal("A flow is required")
-		return
+		cli.ShowCommandHelp(c, c.Command.Name)
+		os.Exit(1)
 	}
 	flows := strings.Split(flow, " ")
 

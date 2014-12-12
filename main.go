@@ -25,6 +25,8 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "glowdock"
 	app.Usage = "Interact with your flowdock flows."
+	app.Author = "Will Mernagh"
+	app.Email = "wmernagh@gmail.com"
 	app.Version = version
 
 	app.Commands = []cli.Command{
@@ -53,7 +55,7 @@ func main() {
 		},
 		{
 			Name:   "message",
-			Usage:  "Send a message to a Flow.",
+			Usage:  "Send a message to a Flow. Message arguments required.",
 			Action: Message,
 			Flags: []cli.Flag{
 				cli.StringFlag{

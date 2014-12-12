@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 
 	"github.com/codegangsta/cli"
 	"github.com/wm/go-flowdock/flowdock"
@@ -13,7 +14,8 @@ func ListFlows(c *cli.Context) {
 	flows, _, err := client.Flows.List(true, &opt)
 
 	if err != nil {
-		log.Fatal("Get:", err)
+		log.Fatal("Error: failed to fetch the flow list - ", err)
+		os.Exit(2)
 	}
 
 	fmt.Printf("%35s\t| %20s\t| %s\t| %s\n\n", "ID", "Name", "Organization", "URL")

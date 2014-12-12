@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"log"
+	"os"
 	"strings"
 
 	"github.com/codegangsta/cli"
@@ -14,8 +15,8 @@ func Message(c *cli.Context) {
 
 	flow := c.String("flow")
 	if len(flow) < 1 {
-		log.Fatal("A flow is required")
-		return
+		cli.ShowCommandHelp(c, c.Command.Name)
+		os.Exit(1)
 	}
 
 	prefix := c.String("prepend")
@@ -27,8 +28,8 @@ func Message(c *cli.Context) {
 	if len(c.Args()) > 0 {
 		content.WriteString(strings.Join(c.Args(), " "))
 	} else {
-		log.Fatal("A message is required")
-		return
+		cli.ShowCommandHelp(c, c.Command.Name)
+		os.Exit(1)
 	}
 
 	opt := &flowdock.MessagesCreateOptions{
